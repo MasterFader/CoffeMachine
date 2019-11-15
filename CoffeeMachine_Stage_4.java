@@ -59,7 +59,7 @@ public class CoffeeMachine {
 
         do {
             System.out.println("Write action (buy, fill, take, remaining, exit):");
-            menuChoice = scanner.nextLine();
+            menuChoice = scanner.next();
             System.out.println();
 
             switch (menuChoice) {
