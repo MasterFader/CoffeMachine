@@ -4,22 +4,22 @@
 
 public class CoffeeMachine {
 
-    public static int useWater(int waterAvailable, int waterNeeded){
+    private static int useWater(int waterAvailable, int waterNeeded){
         return waterAvailable - waterNeeded;
     }
-    public static int useMilk(int milkAvailable, int milkNeeded){
+    private static int useMilk(int milkAvailable, int milkNeeded){
         return milkAvailable - milkNeeded;
     }
-    public static int useCoffee(int coffeeAvailable, int coffeeNeeded){
+    private static int useCoffee(int coffeeAvailable, int coffeeNeeded){
         return coffeeAvailable - coffeeNeeded;
     }
-    public static int useCups(int cupsAvailable, int cupsNeeded){
-        return cupsAvailable-cupsNeeded;
+    private static int useCups(int cupsAvailable){
+        return cupsAvailable- 1;
     }
-    public static int collectMoney(int moneyAvailable, int moneyNeeded){
+    private static int collectMoney(int moneyAvailable, int moneyNeeded){
         return moneyAvailable + moneyNeeded;
     }
-    public static String missingIngredient(int waterAvailable, int milkAvailable, int coffeeAvailable, int cupsAvailable, int waterNeeded, int milkNeeded, int coffeeNeeded){
+    private static String missingIngredient(int waterAvailable, int milkAvailable, int coffeeAvailable, int cupsAvailable, int waterNeeded, int milkNeeded, int coffeeNeeded){
         String ingredient = null;
         if (waterAvailable < waterNeeded ) {
             ingredient = "water";
@@ -74,7 +74,7 @@ public class CoffeeMachine {
 
                                 availableWater = useWater(availableWater, espressoWater);
                                 availableCoffee = useCoffee(availableCoffee,espressoCoffee);
-                                availableCups = useCups(availableCups,1);
+                                availableCups = useCups(availableCups);
                                 availableMoney = collectMoney(availableMoney,espressoPrice);
                                 System.out.println("I have enough resources, making you a coffee!");
                                 System.out.println();
@@ -91,7 +91,7 @@ public class CoffeeMachine {
                                 availableWater = useWater(availableWater, latteWater);
                                 availableMIlk = useMilk(availableMIlk,latteMilk);
                                 availableCoffee = useCoffee(availableCoffee,latteCoffee);
-                                availableCups = useCups(availableCups,1);
+                                availableCups = useCups(availableCups);
                                 availableMoney = collectMoney(availableMoney,lattePrice);
                                 System.out.println("I have enough resources, making you a coffee!");
                                 System.out.println();
@@ -109,7 +109,7 @@ public class CoffeeMachine {
                                 availableWater = useWater(availableWater, cappuccinoWater);
                                 availableMIlk = useMilk(availableMIlk,cappuccinoMilk);
                                 availableCoffee = useCoffee(availableCoffee,cappuccinoCoffee);
-                                availableCups = useCups(availableCups,1);
+                                availableCups = useCups(availableCups);
                                 availableMoney = collectMoney(availableMoney,cappuccinoPrice);
                                 System.out.println("I have enough resources, making you a coffee!");
                                 System.out.println();
